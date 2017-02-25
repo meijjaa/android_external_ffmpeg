@@ -6,7 +6,7 @@
 #define CONFIG_THIS_YEAR 2016
 #define FFMPEG_DATADIR "/usr/local/share/ffmpeg"
 #define AVCONV_DATADIR "/usr/local/share/ffmpeg"
-#define CC_IDENT "gcc 4.9 (GCC) 20140827 (prerelease)"
+#define CC_IDENT "gcc 4.9 (GCC) 20150123 (prerelease)"
 #define av_restrict restrict
 #define EXTERN_PREFIX ""
 #define EXTERN_ASM 
@@ -249,6 +249,10 @@
 #undef HAVE_MIPS32R2
 #endif
 #define HAVE_MIPS32R2 0
+#ifdef HAVE_MIPS32R5
+#undef HAVE_MIPS32R5
+#endif
+#define HAVE_MIPS32R5 0
 #ifdef HAVE_MIPS64R2
 #undef HAVE_MIPS64R2
 #endif
@@ -421,6 +425,10 @@
 #undef HAVE_MIPS32R2_EXTERNAL
 #endif
 #define HAVE_MIPS32R2_EXTERNAL 0
+#ifdef HAVE_MIPS32R5_EXTERNAL
+#undef HAVE_MIPS32R5_EXTERNAL
+#endif
+#define HAVE_MIPS32R5_EXTERNAL 0
 #ifdef HAVE_MIPS64R2_EXTERNAL
 #undef HAVE_MIPS64R2_EXTERNAL
 #endif
@@ -593,6 +601,10 @@
 #undef HAVE_MIPS32R2_INLINE
 #endif
 #define HAVE_MIPS32R2_INLINE 0
+#ifdef HAVE_MIPS32R5_INLINE
+#undef HAVE_MIPS32R5_INLINE
+#endif
+#define HAVE_MIPS32R5_INLINE 0
 #ifdef HAVE_MIPS64R2_INLINE
 #undef HAVE_MIPS64R2_INLINE
 #endif
@@ -1213,6 +1225,10 @@
 #undef HAVE_SETCONSOLECTRLHANDLER
 #endif
 #define HAVE_SETCONSOLECTRLHANDLER 0
+#ifdef HAVE_SETDLLDIRECTORY
+#undef HAVE_SETDLLDIRECTORY
+#endif
+#define HAVE_SETDLLDIRECTORY 0
 #ifdef HAVE_SETMODE
 #undef HAVE_SETMODE
 #endif
@@ -1494,8 +1510,8 @@
 #define CONFIG_PROTOCOLS 1
 #define CONFIG_DOC 0
 #define CONFIG_HTMLPAGES 0
-#define CONFIG_MANPAGES 1
-#define CONFIG_PODPAGES 1
+#define CONFIG_MANPAGES 0
+#define CONFIG_PODPAGES 0
 #define CONFIG_TXTPAGES 0
 #define CONFIG_AVIO_READING_EXAMPLE 1
 #define CONFIG_AVIO_DIR_CMD_EXAMPLE 1
